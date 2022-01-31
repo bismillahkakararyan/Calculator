@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator - Bismillah Kakar Aryan</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <table>
+    
+<input type="text"  id="output" readonly  >
+  <tr>
+  <td colspan="2"><button id="operatorTop"  onclick="clearContent()" >C</button></td>
+  <td><button id="operatorTop" value="%" onclick="viewData('%')">%</button></td>
+  <td><button id="operator" value="X" onclick="viewData('*')">X</button></td>
+
+  </tr>
+
+  <tr>
+  <td><button onclick="viewData('1')" value="1">1</button></td>
+  <td><button onclick="viewData('2')" value="2">2</button></td>
+  <td><button onclick="viewData('3')" value="3">3</button></td>
+  <td><button id="operator" onclick="viewData('/')" value="/">/</button></td>
+
+
+  </tr>
+
+  <tr>
+  <td><button onclick="viewData('4')" value="4">4</button></td>
+  <td><button onclick="viewData('5')" value="5">5</button></td>
+  <td><button onclick="viewData('6')" value="6">6</button></td>
+  <td><button id="operator" onclick="viewData('-')" value="-">-</button></td>
+
+  </tr>
+  <tr>
+    <td><button onclick="viewData('7')" value="7">7</button></td>
+    <td><button onclick="viewData('8')" value="8">8</button></td>
+    <td><button onclick="viewData('9')" value="9">9</button></td>
+    <td><button id="operator" onclick="viewData('+')" value="+">+</button></td>
+
+  </tr>
+    <tr>
+      <td><button onclick="viewData('00')" value="00">00</button></td>
+      <td><button onclick="viewData('0')"  value="0">0</button></td>
+      <td><button value="." onclick="viewData('.')" >.</button></td>
+      <td><button id="Equalbtn"  onclick="computeValues()" value="=">=</button></td>
+
+    </tr>
+  </table>
+
+  <footer>
+    <p style="color: wheat;">Made with &#10084; by <a href="https://www.facebook.com/aryanbismillah"> Bismillah Kakar Aryan
+    </a></p>
+  </footer>
+<script>
+  // clear output
+function clearContent(){
+  document.getElementById("output").value = ""
+};
+
+
+  // forwarding output to calculator display
+  function viewData(num){
+    document.getElementById('output').value+=num
+  };
+
+  // computing values
+
+  function computeValues(){
+  let x = document.getElementById('output').value;
+  let y = eval(x)
+  document.getElementById('output').value = y
+  }
+
+</script>
+  </body>
+</html>
